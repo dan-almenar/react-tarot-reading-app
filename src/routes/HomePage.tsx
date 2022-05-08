@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import NavbarComponent from '../components/layout/NavbarComponent'
 import UserForm from '../components/UserForm'
 import { User } from '../customTypes/customTypes'
 
@@ -9,28 +8,13 @@ function HomePage() {
   is saved in the browser's localStorage
   */
   const [isSavedUser, setIsSavedUser] = useState(
-    localStorage.getItem('userData') ? true : false
+    localStorage.getItem('userData') != null
   )
 
   const [userData, setUserData] = useState(
     isSavedUser ? JSON.parse(localStorage.getItem('userData') as string) : {}
   )
   const [user, setUser] = useState({} as User)
-
-  if (isSavedUser) {
-    const { firstName, lastName, email, gender, birthDate, zodiacSign } = userData
-
-    const newUser: User = {
-      firstName,
-      lastName,
-      email,
-      gender,
-      birthDate,
-      zodiacSign
-    }
-
-    setUser(newUser)
-  }
  
   return (
     <div className="hero is-fullheight has-background-warning-light">
@@ -41,6 +25,8 @@ function HomePage() {
 
         {/* if there is no user data in the localStorage, the form will display */}
         {!isSavedUser && <UserForm setIsSavedUser={setIsSavedUser} setUserData={setUserData} />}
+
+        {isSavedUser && <>Hello</>}
 
         {/* else, fortune telling options (tarot cards or horoscope) are displayed */}
       </div>

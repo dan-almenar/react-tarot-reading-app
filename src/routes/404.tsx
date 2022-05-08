@@ -6,7 +6,7 @@ function Error404Page() {
 
   return (
     <div className="container">
-        <div className="hero is-fullheight is-link">
+        <div className="hero is-fullheight has-background-warning-light">
             <div className="hero-body container">
                 <div className="title is-size-1">
                     Error: 404
@@ -16,7 +16,7 @@ function Error404Page() {
                 </div>
             </div>
             <div className="container">
-                <button onClick={() => navigate('/')} className="box button is-info">
+                <button onClick={() => navigate('/')} className="box button is-warning">
                     Ir a Inicio
                 </button>
             </div>

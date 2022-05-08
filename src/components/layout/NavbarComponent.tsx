@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function NavbarComponent() {
+    const [isActive, setIsActive] = useState(false)
   return (
     <div className="navbar is-warning">
         <div className="navbar-brand">
@@ -9,26 +10,30 @@ function NavbarComponent() {
                     <img className='' src="/assets/astrologia.png" alt="logo" />
                 </i>
             </div>
-            <div className="navbar-burger">
+            <div onClick={() => setIsActive(!isActive)} className="navbar-burger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <div className="navbar-menu">
-            <div className="navbar-end">
+        <div className={`navbar-menu has-background-warning-light ${isActive ? 'is-active' : ''}`}>
+            <div className="navbar-end has-text-right">
                 <a className='navbar-item' href="/">
-                    Inicio
-                    <i className='material-icons-outlined'>home</i>
-                </a>
-                <a className='navbar-item' href="/about">
-                    Sobre la App
-                    <i className='material-icons-outlined'>info</i>
+                    Home
+                    <i className='material-icons-outlined ml-3'>home</i>
                 </a>
                 <a className='navbar-item' href="/#tarot">
                     Tarot
-                    <i className='material-icons-outlined'>home</i>
-                </a>                
+                    <i className='material-icons-outlined ml-3'>visibility</i>
+                </a>
+                <a className='navbar-item' href="/#tarot">
+                    Horoscope
+                    <i className='material-icons-outlined ml-3'>insights</i>
+                </a>
+                <a className='navbar-item' href="/about">
+                    About the App
+                    <i className='material-icons-outlined ml-3'>info</i>
+                </a>
             </div>
         </div>
     </div>

@@ -14,6 +14,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path='tarot' element={<App />} />
+        <Route path='horoscope' element={<App />} />        
         <Route path='*' element={<Error404Page />} />
       </Routes>
       {/* <React.StrictMode>

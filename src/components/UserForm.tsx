@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Parallax } from 'react-scroll-parallax'
-import { User } from '../customTypes/customTypes'
+import { User, ZodiacSign } from '../customTypes/customTypes'
 
 function UserForm(props: any) {
     // props
@@ -26,7 +26,6 @@ function UserForm(props: any) {
     }
     const getBirthDate = (e: any): void => {
         setBirthDate(e.target.value)
-        console.log(new Date(e.target.value).getMonth())
     }
     const getGender = (e: any): void => {
         setGender(e.target.value)
@@ -44,8 +43,8 @@ function UserForm(props: any) {
        return `${year}-${month}-${day}` 
    }
 
-    const getZodiacSign = (birthDate: string): string => {
-        let zodiacSign: string = ''
+    const getZodiacSign = (birthDate: string): ZodiacSign => {
+        let zodiacSign: ZodiacSign = 'Aquarius'
         const bDate = new Date(birthDate)
         const month = bDate.getMonth()
         const date = bDate.getDate()
@@ -182,6 +181,7 @@ function UserForm(props: any) {
                 </div>
             </form>
         </div>
+        <br />
       </div>
     </Parallax>
   )
