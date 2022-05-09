@@ -112,6 +112,7 @@ function UserForm(props: any) {
             birthDate: birthDate,
             zodiacSign: getZodiacSign(birthDate)
         }
+        // setUserData(userData)
         setUserData(userData)
 
         /*
@@ -122,8 +123,10 @@ function UserForm(props: any) {
         /*
         Once the isSavedUser state gets updated to true,
         the UserForm component gets removed from the HomePage component
+        As a failsafe, we do not inforce the true value directly,
+        but rather the result of looking for the data in the localStorage
         */
-        setIsSavedUser(true)
+        setIsSavedUser(localStorage.getItem('userData') !== null)
         
     }
   return (
