@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import UserForm from '../components/UserForm'
-import { User } from '../customTypes/customTypes'
+import WelcomeComponent from '../components/WelcomeComponent'
 
 function HomePage() {
   /*
@@ -14,36 +14,46 @@ function HomePage() {
   const [userData, setUserData] = useState(
     isSavedUser ? JSON.parse(localStorage.getItem('userData') as string) : {}
   )
-  const [user, setUser] = useState({} as User)
 
-  // updating user if userData is updated
+  const clearUserData = (): void => {
+    localStorage.clear()
+    setUserData({})
+    setIsSavedUser(localStorage.getItem('userData') != null)
+  }
+
+  // updating isSavedUser state to true if userData is updated
   useEffect(() => {
-    const { firstName, lastName, email, gender, birthDate, zodiacSign } = userData
-    const newUser = {
-      firstName,
-      lastName,
-      email,
-      gender,
-      birthDate,
-      zodiacSign
-    }
-    setUser(newUser)
+    Object.keys(userData).length === 0 && setIsSavedUser(localStorage.getItem('userData') != null)
   }, [userData])
+
  
   return (
     <div className="hero is-fullheight has-background-warning-light">
       <div className="container hero-title mt-5">
         <h1 className="title mt-3">Fortune Teller</h1>
-        <h2 className="subtitle mt-3">Your future revealed by Tarot Cards and the stars...</h2>
+        <h2 className="subtitle mt-3">Your future revealed by Tarot and the stars...</h2>
         <br />
 
-        {/* if there is no user data in the localStorage, the form will display */}
-        {!isSavedUser && <UserForm setIsSavedUser={setIsSavedUser} setUserData={setUserData} />}
-
-        {/* else, fortune telling options (tarot cards or horoscope) are displayed */}
+        {/* if there is no user data in the localStorage, the form will display
+        Otherwise, fortune telling options (tarot cards or horoscope) are displayed */}
+        {
+        !isSavedUser ? <UserForm setIsSavedUser={setIsSavedUser} setUserData={setUserData} />
+        : <WelcomeComponent userData={userData} clearUserData={clearUserData} />
+        }
       </div>
     </div>
   )
 }
+
+/*
+/// NOTES ///
+
+Tarot Cards API endpoint (get 3 random cards):
+https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=3
+
+Tarot Cards Images URL (example):
+https://sacred-texts.com/tarot/pkt/img/${name_short}.jpg
+https://sacred-texts.com/tarot/pkt/img/ar10.jpg
+*/
 
 export default HomePage
