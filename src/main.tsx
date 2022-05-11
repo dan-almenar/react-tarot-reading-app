@@ -5,8 +5,9 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './routes/HomePage'
 import AboutPage from './routes/AboutPage'
-import Error404Page from './routes/404'
 import { ParallaxProvider } from 'react-scroll-parallax'
+import TarotPage from './routes/TarotPage'
+import ErrorPage from './routes/ErrorPage'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <ParallaxProvider>
@@ -14,9 +15,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="about" element={<AboutPage />} />
-        <Route path='tarot' element={<App />} />
-        <Route path='horoscope' element={<App />} />        
-        <Route path='*' element={<Error404Page />} />
+        <Route path='tarot' element={<TarotPage />} />        
+        <Route path='*'
+          element={<ErrorPage code={'404: Not found'}
+          message={'The page you are trying to access does not exist'} />}
+        />
       </Routes>
       {/* <React.StrictMode>
         <App />

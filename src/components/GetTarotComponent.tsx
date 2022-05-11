@@ -5,11 +5,15 @@ function GetTarotComponent(props: any) {
   const navigate = useNavigate()
 
   return (
-    <div onDoubleClick={() => navigate('/tarot')} className="column">
-      <div className="card-header has-background-warning">
+    <div onClick={() => navigate('/tarot')} className="box has-background-warning m-5">
+      <div className="card-header">
           <p className="card-header-title title is-centered is-size-4"> {props.headerTitle} </p>
       </div>
-      <img className="card-image" src="https://sacred-texts.com/tarot/pkt/img/ar10.jpg" alt="" />
+      <div className="card-image m-5">
+        <figure className="image">
+        <img className="" src="https://sacred-texts.com/tarot/pkt/img/ar10.jpg" alt="" />
+        </figure>
+      </div>
       <p className="box subtitle has-background-warning"> {props.footer} </p>
     </div>
   )

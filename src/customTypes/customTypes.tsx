@@ -18,6 +18,18 @@ type ZodiacSign = 'Aquarius' |
                     'Virgo' | 
                     'Libra' | 
                     'Scorpio' | 
-                    'Sagitarius'
+                    'Sagitarius';
 
-export type { User, ZodiacSign }
+type ZodiacInfo = {
+    data?: {
+        current_date: string,
+        description: string,
+        mood: string,
+        compatibility: string,
+        color: string,
+        lucky_number: number,
+    }
+    error?: Error
+}
+
+export type { User, ZodiacSign, ZodiacInfo }

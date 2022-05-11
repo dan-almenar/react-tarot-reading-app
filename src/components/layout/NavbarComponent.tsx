@@ -22,13 +22,9 @@ function NavbarComponent() {
                     Home
                     <i className='material-icons-outlined ml-3'>home</i>
                 </a>
-                <a className='navbar-item' href="/#tarot">
+                <a className='navbar-item' href="/tarot">
                     Tarot
                     <i className='material-icons-outlined ml-3'>visibility</i>
-                </a>
-                <a className='navbar-item' href="/#tarot">
-                    Horoscope
-                    <i className='material-icons-outlined ml-3'>insights</i>
                 </a>
                 <a className='navbar-item' href="/about">
                     About the App

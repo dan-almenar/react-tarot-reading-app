@@ -29,9 +29,9 @@ function HomePage() {
  
   return (
     <div className="hero is-fullheight has-background-warning-light">
-      <div className="container hero-title mt-5">
-        <h1 className="title mt-3">Fortune Teller</h1>
-        <h2 className="subtitle mt-3">Your future revealed by Tarot and the stars...</h2>
+      <div className="container hero-title pt-3">
+        <h1 className="title pt-5">Ophiuchus Oracle</h1>
+        <h2 className="subtitle">Your future revealed by Tarot and the stars...</h2>
         <br />
 
         {/* if there is no user data in the localStorage, the form will display
