@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Parallax } from 'react-scroll-parallax'
 import { User, ZodiacSign } from '../customTypes/customTypes'
 
 function UserForm(props: any) {
@@ -131,7 +130,6 @@ function UserForm(props: any) {
         
     }
   return (
-    <Parallax speed={-10}>
       <div className="container mt-5 mb-5">
           <p className="subtitle">
               Please fill out the form below to continue.
@@ -187,7 +185,6 @@ function UserForm(props: any) {
         </div>
         <br />
       </div>
-    </Parallax>
   )
 }
 

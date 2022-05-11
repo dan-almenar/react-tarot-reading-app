@@ -14,6 +14,8 @@ Added features beyond of the scope of the test:
 - Routing.
 - useEffect.
 
+## [Live version](https://ophiuchus-oracle.netlify.app/)
+
 ## About clonning this repo:
 The App was created with [Vite](https://vitejs.dev/).
 
@@ -42,6 +44,8 @@ Características añadidas más allá del área de la prueba:
 - Typescript.
 - Routing.
 - useEffect.
+
+## [Versión final](https://ophiuchus-oracle.netlify.app/)
 
 ## Sobre clonar esta App:
 Esta App fue creada con [Vite](https://vitejs.dev)

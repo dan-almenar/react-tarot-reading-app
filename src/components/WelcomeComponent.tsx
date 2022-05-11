@@ -14,7 +14,6 @@ function WelcomeComponent(props: any) {
                 lastName={userData.lastName}
                 birthDate={userData.birthDate}
             />
-            {/* <div className='hero-body mr-2 ml-2'> */}
                 <ZodiacInfoComponent zodiacSign={userData.zodiacSign} />
                 <GetTarotComponent
                     headerTitle={'TAROT'}

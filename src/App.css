@@ -9,6 +9,10 @@
   animation: blink 2.5s infinite;
 }
 
+.reversed {
+  transform: rotateX(180deg);
+}
+
 @keyframes blink {
   0% {
     opacity: 1;

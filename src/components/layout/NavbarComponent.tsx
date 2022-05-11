@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function NavbarComponent() {
     const [isActive, setIsActive] = useState(false)
@@ -18,18 +19,18 @@ function NavbarComponent() {
         </div>
         <div className={`navbar-menu has-background-warning-light ${isActive ? 'is-active' : ''}`}>
             <div className="navbar-end has-text-right">
-                <a className='navbar-item' href="/">
+                <Link className='navbar-item' to={'/'}>
                     Home
                     <i className='material-icons-outlined ml-3'>home</i>
-                </a>
-                <a className='navbar-item' href="/tarot">
+                </Link>
+                <Link className='navbar-item' to={'/tarot'}>
                     Tarot
                     <i className='material-icons-outlined ml-3'>visibility</i>
-                </a>
-                <a className='navbar-item' href="/about">
-                    About the App
+                </Link>
+                <Link className='navbar-item' to={'/about'}>
+                    About
                     <i className='material-icons-outlined ml-3'>info</i>
-                </a>
+                </Link>
             </div>
         </div>
     </div>

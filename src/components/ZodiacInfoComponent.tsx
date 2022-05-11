@@ -34,7 +34,6 @@ function ZodiacInfoComponent( props: any ) {
                 setTimeout(() => {
                     setZodiacInfo({error: new Error('Something went wrong. Please stand by...')})
                 }, 8000)
-                console.log(zodiacInfo.error)
                 return
             }
         }
@@ -46,7 +45,7 @@ function ZodiacInfoComponent( props: any ) {
             {/* data is being fetched */}
             { zodiacInfo.data === undefined && zodiacInfo.error === undefined &&
                 <div className='mb-5'>
-                    <p className='loading'>Loading</p>
+                    <p className='loading'>Loading horoscope...</p>
                     <progress className="progress is-small is-warning" max="100">45%</progress>
                 </div>            
             }
@@ -87,7 +86,7 @@ function ZodiacInfoComponent( props: any ) {
                     </p>
                 </div>
             }
-            {/* data has been fetched but there was an error. */}
+            {/* An error ocurred fetching the data. */}
             { zodiacInfo.error !== undefined &&
               <ErrorComponent
                 code='500: Internal Server Error'

@@ -29,7 +29,7 @@ function HomePage() {
  
   return (
     <div className="hero is-fullheight has-background-warning-light">
-      <div className="container hero-title pt-3">
+      <div className="container column is-half hero-title pt-3">
         <h1 className="title pt-5">Ophiuchus Oracle</h1>
         <h2 className="subtitle">Your future revealed by Tarot and the stars...</h2>
         <br />
@@ -48,8 +48,8 @@ function HomePage() {
 /*
 /// NOTES ///
 
-Tarot Cards API endpoint (get 3 random cards):
-https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=3
+Tarot Cards API endpoint (get 1 random card):
+https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=1
 
 Tarot Cards Images URL (example):
 https://sacred-texts.com/tarot/pkt/img/${name_short}.jpg

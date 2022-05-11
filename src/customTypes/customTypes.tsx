@@ -32,4 +32,17 @@ type ZodiacInfo = {
     error?: Error
 }
 
-export type { User, ZodiacSign, ZodiacInfo }
+type TarotCard = {
+    data?: {
+        description: string,
+        reversedMeaning: string,
+        normalMeaning: string,
+        name: string,
+        shortName: string,
+        type: string,
+        value: string
+    },
+    error?: Error
+}
+
+export type { User, ZodiacSign, ZodiacInfo, TarotCard }
