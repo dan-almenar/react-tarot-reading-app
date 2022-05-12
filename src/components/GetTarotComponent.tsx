@@ -10,7 +10,7 @@ function GetTarotComponent(props: any) {
       <TarotCardComponent
       name={props.headerTitle}
       shortName='ar10'
-      description={props.footer}
+      footer={props.footer}
       />
     </div>
   )

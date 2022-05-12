@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TarotCardComponent(props: any) {
-    const { name, shortName, cardType, description, reversedMeaning, normalMeaning, value, isReversed } = props
+    const { name, shortName, cardType, description, reversedMeaning, normalMeaning, value, isReversed, footer } = props
     const position: string = isReversed ? 'Reversed' : 'Normal'
   return (
       <div className="column is-half container">
@@ -55,6 +55,14 @@ function TarotCardComponent(props: any) {
                 {value}
             </p>                
             }
+            {
+                footer != null &&
+                <p className='has-text-centered'>
+                    {footer}
+                <br />
+                {value}
+            </p>                
+            }            
         </div>
     </div>          
       </div>
